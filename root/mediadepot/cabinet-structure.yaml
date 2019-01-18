@@ -56,7 +56,7 @@ cabinets:
     - label: Immigration
   - label: Credentials & Passwords
   - label: Travel
-  - label: Employeers
+  - label: Employers
     cabinets:
     - label: Offer Letters
     - label: Job Postings
