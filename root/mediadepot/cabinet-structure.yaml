@@ -1,0 +1,64 @@
+cabinets:
+  - label: Home and Property Records
+    cabinets:
+    - label: Mortgage
+    - label: Property Deeds
+    - label: Home Improvement Projects and Receipts
+    - label: Appliance Manuals and Warranties
+    - label: Property Tax Information
+    - label: Home Insurance Policies
+    - label: Manuals
+  - label: Auto Records
+    cabinet:
+    - label: Titles
+    - label: Maintenance Records
+    - label: Insurance Policies and Information
+    - label: Loan Information
+    - label: Payment Records
+  - label: Health Records
+    cabinets:
+    - label: Insurance Policies
+    - label: Health Insurance Benefits Manuals
+    - label: Explanation of Medical Benefits
+    - label: Doctor Bills
+    - label: Prescription Lists
+    - label: Flexible Spending Information
+    - label: Medical Receipts
+    - label: Medical Directives
+    - label: Life Insurance Policies
+  - label: Financial Records
+    cabinets:
+    - label: Bank Statements
+    - label: Tax Returns
+    - label: Tax Deduction Records
+    - label: Investment Records
+    - label: Loan Records
+    - label: Credit Card Statements
+  - label: Electronics Records
+    cabinets:
+    - label: Cell Phone Contracts and Manuals
+    - label: Sales Receipts and Warranties for Computers, Laptops, and iPads
+    - label: Cable and Internet Plans and Bills
+    - label: Wireless Router Sales Receipt and Manual
+  - label: Personal Records
+    cabinets:
+    - label: Birth Certificates
+    - label: Marriage Certificate
+    - label: Divorce Certificate
+    - label: Custody Papers
+    - label: Social Security Information
+    - label: Immunization Records
+    - label: Passports
+    - label: Education
+    - label: Wills
+    - label: Funeral plan
+    - label: Burial site information
+    - label: Immigration
+  - label: Credentials & Passwords
+  - label: Travel
+  - label: Employeers
+    cabinets:
+    - label: Offer Letters
+    - label: Job Postings
+
+
