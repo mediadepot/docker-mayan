@@ -6,4 +6,5 @@ COPY /root /
 
 # change mayan userid
 RUN usermod -u 15000 mayan && \
-    groupmod -g 15000 mayan
+    groupmod -g 15000 mayan && \
+    chown -R mayan:mayan /opt/mayan-edms
