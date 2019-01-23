@@ -4,7 +4,7 @@ import io
 import re
 
 #log into mayan edms server
-api = API(host='http://localhost', username='admin', password='password')
+api = API(host='http://localhost', username='admin', password='4HJSmRDVFt')
 print api._info
 
 def create_cabinet_rec(cabinet, parent_cabinet_id):

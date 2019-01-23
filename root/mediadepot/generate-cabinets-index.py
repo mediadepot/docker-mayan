@@ -4,7 +4,7 @@ import io
 import re
 
 #log into mayan edms server
-api = API(host='http://localhost', username='admin', password='WZHdJDcp5d')
+api = API(host='http://localhost', username='admin', password='4HJSmRDVFt')
 print api._info
 
 def get_cabinets_rec(current_page):
@@ -28,10 +28,10 @@ def upsert_cabinet_index():
     # list all indexes
     indexes = get_indexes_rec(1)
 
-    cabinet_index = next((index for index in indexes if index['label'] == 'Cabindets'), None)
+    cabinet_index = next((index for index in indexes if index['label'] == 'Cabinets'), None)
 
     if not cabinet_index:
-        print api.document_indexing.indexes.post({'enabled': 'true', 'label': 'Cabinedts', 'document_types': '1' })
+        print api.document_indexing.indexes.post({'enabled': 'true', 'label': 'Cabinets', 'document_types': '1' })
 
     return cabinet_index
 
