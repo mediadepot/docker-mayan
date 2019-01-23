@@ -1,15 +1,23 @@
-from mayan_api_client import API
+import requests
 import yaml
 import io
 import re
 
-#log into mayan edms server
-api = API(host='http://localhost', username='admin', password='4HJSmRDVFt')
-print api._info
+
+username = 'admin'
+password = 'jG22sCfbcd'
+api_base = 'http://mayan-edms:8000/api'
+
+r = requests.get('{0}/documents'.format(api_base), auth=(username, password))
+r.raise_for_status()
+print r.json()
 
 def get_cabinets_rec(current_page):
 
-    resp = api.cabinets.cabinets.get(page=current_page)
+    r = requests.get('{0}/cabinets'.format(api_base), params={'page':current_page}, auth=(username, password))
+    r.raise_for_status()
+
+    resp = r.json()
     results = resp['results']
     if resp['next']:
         return results + get_cabinets_rec(current_page + 1)
@@ -17,7 +25,12 @@ def get_cabinets_rec(current_page):
     return results
 
 def get_indexes_rec(current_page):
-    resp = api.document_indexing.indexes.get(page=current_page)
+
+    r = requests.get('{0}/indexes'.format(api_base), params={'page':current_page}, auth=(username, password))
+    r.raise_for_status()
+
+    resp = r.json()
+
     results = resp['results']
     if resp['next']:
         return results + get_cabinets_rec(current_page + 1)
@@ -31,7 +44,11 @@ def upsert_cabinet_index():
     cabinet_index = next((index for index in indexes if index['label'] == 'Cabinets'), None)
 
     if not cabinet_index:
-        print api.document_indexing.indexes.post({'enabled': 'true', 'label': 'Cabinets', 'document_types': '1' })
+
+        r = requests.post('{0}/indexes'.format(api_base), data={'enabled': 'true', 'label': 'Cabinets', 'document_types': [1]}, auth=(username, password))
+        r.raise_for_status()
+        print r.json()
+        cabinet_index = r.json()['id']
 
     return cabinet_index
 
