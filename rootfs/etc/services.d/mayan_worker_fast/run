@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv bash
+
+nice -n 1 /bin/bash -c "${MAYAN_BIN} celery --settings=${MAYAN_SETTINGS_MODULE} worker -Ofair -l ERROR -Q converter,sources_fast -n mayan-worker-fast.%%h ${MAYAN_WORKER_FAST_CONCURRENCY}"

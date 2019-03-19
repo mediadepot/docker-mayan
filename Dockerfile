@@ -1,10 +1,12 @@
 FROM mayanedms/mayanedms:latest
 
-#RUN pip install mayan-api_client
+# install s6overlay so that we can run cron inside this container as well.
+ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.8.0/s6-overlay-amd64.tar.gz /tmp/
+RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C / \
+    && mkdir /config
 
-COPY /root /
+COPY /rootfs /
 
-# change mayan userid
-RUN usermod -u 15000 mayan && \
-    groupmod -g 15000 mayan && \
-    chown -R mayan:mayan /opt/mayan-edms
+VOLUME ["/config"]
+
+ENTRYPOINT ["/init"]

@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv bash
+
+/bin/bash -c "if [ ${MAYAN_BROKER_URL} == ${MAYAN_DEFAULT_BROKER_URL} ] && [ ${MAYAN_CELERY_RESULT_BACKEND} == ${MAYAN_DEFAULT_CELERY_RESULT_BACKEND} ];then /usr/bin/redis-server /etc/redis/;fi"

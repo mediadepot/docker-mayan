@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+/bin/bash -c "${MAYAN_GUNICORN_BIN} -w ${MAYAN_GUNICORN_WORKERS} mayan.wsgi --max-requests 500 --max-requests-jitter 50 --worker-class gevent --bind 0.0.0.0:8000  --env DJANGO_SETTINGS_MODULE=${MAYAN_SETTINGS_MODULE}" --timeout 120
+
