@@ -1,0 +1,26 @@
+From 5ba633d335c9aa597cda74e2206551f95ae2e3da Mon Sep 17 00:00:00 2001
+From: Jason Kulatunga <jason@thesparktree.com>
+Date: Tue, 19 Mar 2019 08:35:11 -0700
+Subject: [PATCH] replace supervisor with s6.
+
+---
+ /usr/local/bin/entrypoint.sh | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/usr/local/bin/entrypoint.sh b/usr/local/bin/entrypoint.sh
+index 2c76ba45d5..781a6bf782 100755
+--- a/usr/local/bin/entrypoint.sh
++++ b/usr/local/bin/entrypoint.sh
+@@ -66,8 +66,7 @@ upgrade() {
+ 
+ start() {
+     echo "mayan: start()"
+-    rm -rf /var/run/supervisor.sock
+-    exec /usr/bin/supervisord -nc /etc/supervisor/supervisord.conf
++    exec /init
+ }
+ 
+ os_package_installs() {
+-- 
+2.18.0
+

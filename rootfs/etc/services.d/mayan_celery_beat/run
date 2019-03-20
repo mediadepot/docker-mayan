@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv bash
 
-nice -n 1 /bin/bash -c "${MAYAN_BIN} celery --settings=${MAYAN_SETTINGS_MODULE} beat --pidfile= -l ERROR"
+nice -n 1 su -c "${MAYAN_BIN} celery --settings=${MAYAN_SETTINGS_MODULE} beat --pidfile= -l ERROR" mayan
 
