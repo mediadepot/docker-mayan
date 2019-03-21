@@ -15,8 +15,11 @@ chown -R mayan:mayan "$PROJECT_INSTALL_DIR"
 mkdir -p /var/lib/mayan/settings
 
 chown -R mayan:mayan /var/lib/mayan
+chmod 777 -R /tmp
+chmod o+t -R /tmp
 
 
+# TODOs:
 # - FUSE index/volume mount - https://docs.mayan-edms.com/chapters/indexes.html?highlight=fuse
 # - Set Admin password - https://github.com/mayan-edms/mayan-edms/issues/259
 # - Set Watch Folder -
